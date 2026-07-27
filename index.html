@@ -48,19 +48,21 @@
     .check label{cursor:pointer;flex:1;}
     .signature-box{border:1px dashed #98a2b3;border-radius:12px;padding:14px;background:#fbfcfd;margin-top:15px;}
     .signature-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+    .signature-field{font-family:"Brush Script MT","Segoe Script","Lucida Handwriting",cursive;font-size:30px;font-weight:400;letter-spacing:.02em;color:#002b55;}
     footer{text-align:center;color:var(--muted);font-size:.86rem;margin:28px 0 10px;}
     @media(max-width:760px){.wrap{padding:14px;}.grid,.signature-grid{grid-template-columns:1fr;}.dashboard{grid-template-columns:1fr;}.counter{text-align:left;}h1{font-size:1.55rem;}}
     @media print{
       html,body{width:100%;background:#fff;}
       .wrap{width:100%;max-width:none;padding:0;}
       .hero,.dashboard,.card,details{box-shadow:none;}
-      .actions{display:none;}
+      .actions,.signature-help{display:none;}
       details{break-inside:avoid;page-break-inside:avoid;border:1px solid #bbb;}
       details:not([open]) .section-body{display:block;}
       summary:after{display:none;}
       .hero{border-radius:0;background:#fff;color:#000;border-bottom:2px solid #000;padding:12px 0;}
       .badge{border:1px solid #555;color:#000;background:#fff;}
       .hero input[type="text"],.hero input[type="date"],input[type="text"],input[type="date"],textarea{border:0;border-bottom:1px solid #000;border-radius:0;background:#fff;}
+      .signature-field{font-size:34px;border-bottom:1px solid #000;}
       .dashboard,.card{border:1px solid #999;}
       .bar{border:1px solid #999;}
     }
@@ -252,12 +254,12 @@
 
     <section class="card" id="signoff">
       <h2>Digital Sign-Off</h2>
-      <p class="note">Type names below to complete the electronic sign-off. This information is saved on this device and included when printing or saving as PDF.</p>
+      <p class="note signature-help">Type names below to complete the electronic sign-off. This information is saved on this device and included when printing or saving as PDF.</p>
       <div class="signature-grid">
         <div class="field"><label for="signOperator">Operator Name</label><input id="signOperator" class="saved-field" type="text"></div>
         <div class="field"><label for="supervisor">Supervisor / Reviewer</label><input id="supervisor" class="saved-field" type="text"></div>
         <div class="field"><label for="completionDate">Date Completed</label><input id="completionDate" class="saved-field" type="date"></div>
-        <div class="field"><label for="signature">Electronic Signature</label><input id="signature" class="saved-field" type="text" placeholder="Type full name as signature"></div>
+        <div class="field"><label for="signature">Operator Signature</label><input id="signature" class="saved-field signature-field" type="text" placeholder="Type full name"></div>
       </div>
       <div class="signature-box">
         <label for="notes"><strong>Notes / Defects / Follow-up Required</strong></label>
@@ -276,7 +278,7 @@
 
   <script>
     (function(){
-      const storagePrefix = 'lineMarkingSopV4_';
+      const storagePrefix = 'lineMarkingSopV5_';
       const boxes = Array.from(document.querySelectorAll('.task'));
       const savedFields = Array.from(document.querySelectorAll('.saved-field'));
 
@@ -302,7 +304,7 @@
         const ok = confirm('Reset all checklist items and saved fields?');
         if(!ok) return;
         boxes.forEach((box) => { box.checked = false; localStorage.removeItem(storagePrefix + box.id); });
-        savedFields.forEach((field) => { field.value = field.id === 'vehicle' ? '92502' : ''; localStorage.removeItem(storagePrefix + field.id); });
+        savedFields.forEach((field) => { field.value = ''; localStorage.removeItem(storagePrefix + field.id); });
         updateProgress();
       }
 
