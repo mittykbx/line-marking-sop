@@ -6,317 +6,62 @@
   <title>Line Marking Paint Truck SOP</title>
   <style>
     :root{
-      --primary:#0b3b66;
-      --primary-2:#124f82;
-      --green:#2e7d32;
-      --amber:#f9a825;
-      --red:#d32f2f;
-      --danger:#b3261e;
-      --bg:#f3f6f8;
-      --card:#ffffff;
-      --muted:#667085;
-      --border:#d9e2ea;
-      --soft:#eef4f8;
-      --text:#1f2933;
+      --primary:#0b3b66; --primary-2:#124f82; --green:#2e7d32; --amber:#f9a825; --red:#d32f2f;
+      --danger:#b3261e; --bg:#f3f6f8; --card:#ffffff; --muted:#667085; --border:#d9e2ea; --soft:#eef4f8; --text:#1f2933;
     }
-
     *{box-sizing:border-box;}
-
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:"Segoe UI", Arial, sans-serif;
-      line-height:1.45;
-    }
-
-    .wrap{
-      max-width:1100px;
-      margin:0 auto;
-      padding:24px;
-    }
-
-    .hero{
-      background:linear-gradient(135deg,var(--primary),var(--primary-2));
-      color:#fff;
-      border-radius:18px;
-      padding:28px;
-      box-shadow:0 10px 25px rgba(11,59,102,.18);
-      margin-bottom:20px;
-    }
-
-    .hero-top{
-      display:flex;
-      justify-content:space-between;
-      gap:16px;
-      align-items:flex-start;
-      flex-wrap:wrap;
-    }
-
-    h1{
-      margin:0;
-      font-size:2.05rem;
-      letter-spacing:-.02em;
-    }
-
-    h2{
-      margin-top:0;
-      color:var(--primary);
-    }
-
-    .subtitle{
-      margin:8px 0 0;
-      opacity:.92;
-      font-size:1rem;
-    }
-
-    .badge{
-      background:rgba(255,255,255,.14);
-      border:1px solid rgba(255,255,255,.25);
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:.9rem;
-      white-space:nowrap;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      gap:14px;
-      margin-top:22px;
-    }
-
-    .field label{
-      display:block;
-      font-size:.84rem;
-      font-weight:700;
-      margin-bottom:5px;
-      color:inherit;
-    }
-
-    .hero .field label{
-      opacity:.9;
-    }
-
-    input[type="text"],
-    input[type="date"],
-    textarea{
-      width:100%;
-      border:1px solid #cfd8e3;
-      background:#fff;
-      border-radius:10px;
-      padding:10px 12px;
-      font-size:1rem;
-      font-family:inherit;
-    }
-
-    .hero input[type="text"],
-    .hero input[type="date"]{
-      border:1px solid rgba(255,255,255,.35);
-      background:rgba(255,255,255,.95);
-    }
-
-    textarea{
-      min-height:92px;
-      resize:vertical;
-    }
-
-    .dashboard,
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:18px;
-      margin-bottom:18px;
-      box-shadow:0 4px 12px rgba(16,24,40,.06);
-    }
-
-    .dashboard{
-      display:grid;
-      grid-template-columns:1fr auto;
-      gap:18px;
-      align-items:center;
-    }
-
-    .progress-title{
-      font-weight:800;
-      margin-bottom:8px;
-      color:var(--primary);
-    }
-
-    .bar{
-      height:18px;
-      background:#e8edf2;
-      border-radius:999px;
-      overflow:hidden;
-      border:1px solid #d7e0e8;
-    }
-
-    .fill{
-      height:100%;
-      width:0%;
-      background:var(--red);
-      transition:width .2s ease, background-color .2s ease;
-    }
-
-    .counter{
-      min-width:150px;
-      text-align:right;
-      font-weight:800;
-      color:var(--primary);
-    }
-
-    .completion{
-      margin-top:10px;
-      font-weight:800;
-      color:var(--green);
-    }
-
-    .actions{
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin:20px 0;
-    }
-
-    button{
-      border:0;
-      border-radius:10px;
-      padding:12px 18px;
-      font-size:1rem;
-      font-weight:800;
-      cursor:pointer;
-      box-shadow:0 2px 6px rgba(16,24,40,.12);
-    }
-
-    .print{background:var(--primary); color:#fff;}
-    .pdf{background:#155e75; color:#fff;}
-    .reset{background:var(--danger); color:#fff;}
-    .expand{background:#e7eef5; color:var(--primary);}
-
+    body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-serif;line-height:1.45;}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px;}
+    .hero{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff;border-radius:18px;padding:28px;box-shadow:0 10px 25px rgba(11,59,102,.18);margin-bottom:20px;}
+    .hero-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap;}
+    h1{margin:0;font-size:2.05rem;letter-spacing:-.02em;}
+    h2{margin-top:0;color:var(--primary);}
+    .subtitle{margin:8px 0 0;opacity:.92;font-size:1rem;}
+    .badge{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:8px 12px;border-radius:999px;font-size:.9rem;white-space:nowrap;}
+    .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:22px;}
+    .field label{display:block;font-size:.84rem;font-weight:700;margin-bottom:5px;color:inherit;}
+    .hero .field label{opacity:.9;}
+    input[type="text"],input[type="date"],textarea{width:100%;border:1px solid #cfd8e3;background:#fff;border-radius:10px;padding:10px 12px;font-size:1rem;font-family:inherit;}
+    .hero input[type="text"],.hero input[type="date"]{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.95);}
+    textarea{min-height:92px;resize:vertical;}
+    .dashboard,.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;margin-bottom:18px;box-shadow:0 4px 12px rgba(16,24,40,.06);}
+    .dashboard{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;}
+    .progress-title{font-weight:800;margin-bottom:8px;color:var(--primary);}
+    .bar{height:18px;background:#e8edf2;border-radius:999px;overflow:hidden;border:1px solid #d7e0e8;}
+    .fill{height:100%;width:0%;background:var(--red);transition:width .2s ease,background-color .2s ease;}
+    .counter{min-width:150px;text-align:right;font-weight:800;color:var(--primary);}
+    .completion{margin-top:10px;font-weight:800;color:var(--green);}
+    .actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:20px 0;}
+    button{border:0;border-radius:10px;padding:12px 18px;font-size:1rem;font-weight:800;cursor:pointer;box-shadow:0 2px 6px rgba(16,24,40,.12);}
+    .print{background:var(--primary);color:#fff;} .pdf{background:#155e75;color:#fff;} .reset{background:var(--danger);color:#fff;} .expand{background:#e7eef5;color:var(--primary);}
     button:hover{filter:brightness(.96);}
-
-    details{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:16px;
-      margin-bottom:14px;
-      box-shadow:0 4px 12px rgba(16,24,40,.055);
-      overflow:hidden;
-    }
-
-    summary{
-      list-style:none;
-      cursor:pointer;
-      padding:16px 18px;
-      font-weight:900;
-      color:var(--primary);
-      background:linear-gradient(180deg,#fff,#f8fbfd);
-      border-bottom:1px solid transparent;
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      align-items:center;
-    }
-
+    details{background:var(--card);border:1px solid var(--border);border-radius:16px;margin-bottom:14px;box-shadow:0 4px 12px rgba(16,24,40,.055);overflow:hidden;}
+    summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:900;color:var(--primary);background:linear-gradient(180deg,#fff,#f8fbfd);border-bottom:1px solid transparent;display:flex;justify-content:space-between;gap:12px;align-items:center;}
     summary::-webkit-details-marker{display:none;}
-
-    summary:after{
-      content:"+";
-      width:28px;
-      height:28px;
-      display:inline-grid;
-      place-items:center;
-      border-radius:50%;
-      background:var(--soft);
-      color:var(--primary);
-      font-weight:900;
-    }
-
-    details[open] summary{border-bottom-color:var(--border);}
-    details[open] summary:after{content:"-";}
-
+    summary:after{content:"+";width:28px;height:28px;display:inline-grid;place-items:center;border-radius:50%;background:var(--soft);color:var(--primary);font-weight:900;}
+    details[open] summary{border-bottom-color:var(--border);} details[open] summary:after{content:"-";}
     .section-body{padding:8px 18px 18px;}
-
-    .note{
-      margin:10px 0 14px;
-      padding:12px 14px;
-      border-left:4px solid var(--primary);
-      background:#f6f9fc;
-      color:#46515c;
-      border-radius:8px;
-    }
-
-    .check{
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-      padding:11px 0;
-      border-bottom:1px solid #edf1f4;
-    }
-
+    .note{margin:10px 0 14px;padding:12px 14px;border-left:4px solid var(--primary);background:#f6f9fc;color:#46515c;border-radius:8px;}
+    .check{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid #edf1f4;}
     .check:last-child{border-bottom:0;}
-
-    .check input[type="checkbox"]{
-      margin-top:3px;
-      width:19px;
-      height:19px;
-      accent-color:var(--green);
-      flex:0 0 auto;
-    }
-
-    .check label{
-      cursor:pointer;
-      flex:1;
-    }
-
-    .signature-box{
-      border:1px dashed #98a2b3;
-      border-radius:12px;
-      padding:14px;
-      background:#fbfcfd;
-      margin-top:15px;
-    }
-
-    .signature-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
-      margin-top:14px;
-    }
-
-    footer{
-      text-align:center;
-      color:var(--muted);
-      font-size:.86rem;
-      margin:28px 0 10px;
-    }
-
-    @media(max-width:760px){
-      .wrap{padding:14px;}
-      .grid,
-      .signature-grid{grid-template-columns:1fr;}
-      .dashboard{grid-template-columns:1fr;}
-      .counter{text-align:left;}
-      h1{font-size:1.55rem;}
-    }
-
+    .check input[type="checkbox"]{margin-top:3px;width:19px;height:19px;accent-color:var(--green);flex:0 0 auto;}
+    .check label{cursor:pointer;flex:1;}
+    .signature-box{border:1px dashed #98a2b3;border-radius:12px;padding:14px;background:#fbfcfd;margin-top:15px;}
+    .signature-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+    footer{text-align:center;color:var(--muted);font-size:.86rem;margin:28px 0 10px;}
+    @media(max-width:760px){.wrap{padding:14px;}.grid,.signature-grid{grid-template-columns:1fr;}.dashboard{grid-template-columns:1fr;}.counter{text-align:left;}h1{font-size:1.55rem;}}
+    @page{size:A4 portrait;margin:10mm;}
     @media print{
-      body{background:#fff;}
-      .wrap{max-width:100%; padding:0;}
+      html,body{width:100%;background:#fff;}
+      .wrap{width:100%;max-width:none;padding:0;}
       .hero,.dashboard,.card,details{box-shadow:none;}
       .actions{display:none;}
-      details{break-inside:avoid; page-break-inside:avoid; border:1px solid #bbb;}
+      details{break-inside:avoid;page-break-inside:avoid;border:1px solid #bbb;}
       details:not([open]) .section-body{display:block;}
       summary:after{display:none;}
-      .hero{border-radius:0; background:#fff; color:#000; border-bottom:2px solid #000; padding:12px 0;}
-      .badge{border:1px solid #555; color:#000; background:#fff;}
-      .hero input[type="text"],
-      .hero input[type="date"],
-      input[type="text"],
-      input[type="date"],
-      textarea{border:0; border-bottom:1px solid #000; border-radius:0; background:#fff;}
+      .hero{border-radius:0;background:#fff;color:#000;border-bottom:2px solid #000;padding:12px 0;}
+      .badge{border:1px solid #555;color:#000;background:#fff;}
+      .hero input[type="text"],.hero input[type="date"],input[type="text"],input[type="date"],textarea{border:0;border-bottom:1px solid #000;border-radius:0;background:#fff;}
       .dashboard,.card{border:1px solid #999;}
       .bar{border:1px solid #999;}
     }
@@ -333,38 +78,27 @@
         <div class="badge">Controlled checklist</div>
       </div>
       <div class="grid">
-        <div class="field">
-          <label for="operator">Operator</label>
-          <input id="operator" class="saved-field" type="text" autocomplete="name">
-        </div>
-        <div class="field">
-          <label for="date">Date</label>
-          <input id="date" class="saved-field" type="date">
-        </div>
-        <div class="field">
-          <label for="vehicle">Vehicle / Asset</label>
-          <input id="vehicle" class="saved-field" type="text" value="92502">
-        </div>
+        <div class="field"><label for="operator">Operator</label><input id="operator" class="saved-field" type="text" autocomplete="name"></div>
+        <div class="field"><label for="date">Date</label><input id="date" class="saved-field" type="date"></div>
+        <div class="field"><label for="vehicle">Vehicle / Asset</label><input id="vehicle" class="saved-field" type="text" value="92502"></div>
       </div>
     </section>
 
     <section class="dashboard">
       <div>
         <div class="progress-title" id="progressText">0% Complete</div>
-        <div class="bar" aria-label="Checklist progress">
-          <div class="fill" id="progressBar"></div>
-        </div>
+        <div class="bar" aria-label="Checklist progress"><div class="fill" id="progressBar"></div></div>
         <div class="completion" id="completionBanner"></div>
       </div>
       <div class="counter" id="counterText">0 of 0 checked</div>
     </section>
 
     <div class="actions">
-      <button class="print" type="button" onclick="printChecklist()">Print Checklist</button>
-      <button class="pdf" type="button" onclick="exportPDF()">Export to PDF</button>
-      <button class="reset" type="button" onclick="resetChecklist()">Reset Checklist</button>
-      <button class="expand" type="button" onclick="openAllSections()">Expand All</button>
-      <button class="expand" type="button" onclick="collapseAllSections()">Collapse All</button>
+      <button class="print" id="printBtn" type="button">Print Checklist</button>
+      <button class="pdf" id="pdfBtn" type="button">Save as PDF</button>
+      <button class="reset" id="resetBtn" type="button">Reset Checklist</button>
+      <button class="expand" id="expandBtn" type="button">Expand All</button>
+      <button class="expand" id="collapseBtn" type="button">Collapse All</button>
     </div>
 
     <details open>
@@ -519,24 +253,12 @@
 
     <section class="card" id="signoff">
       <h2>Digital Sign-Off</h2>
-      <p class="note">Type names below to complete the electronic sign-off. This information is saved on this device and included when printing or exporting to PDF.</p>
+      <p class="note">Type names below to complete the electronic sign-off. This information is saved on this device and included when printing or saving as PDF.</p>
       <div class="signature-grid">
-        <div class="field">
-          <label for="signOperator">Operator Name</label>
-          <input id="signOperator" class="saved-field" type="text">
-        </div>
-        <div class="field">
-          <label for="supervisor">Supervisor / Reviewer</label>
-          <input id="supervisor" class="saved-field" type="text">
-        </div>
-        <div class="field">
-          <label for="completionDate">Date Completed</label>
-          <input id="completionDate" class="saved-field" type="date">
-        </div>
-        <div class="field">
-          <label for="signature">Electronic Signature</label>
-          <input id="signature" class="saved-field" type="text" placeholder="Type full name as signature">
-        </div>
+        <div class="field"><label for="signOperator">Operator Name</label><input id="signOperator" class="saved-field" type="text"></div>
+        <div class="field"><label for="supervisor">Supervisor / Reviewer</label><input id="supervisor" class="saved-field" type="text"></div>
+        <div class="field"><label for="completionDate">Date Completed</label><input id="completionDate" class="saved-field" type="date"></div>
+        <div class="field"><label for="signature">Electronic Signature</label><input id="signature" class="saved-field" type="text" placeholder="Type full name as signature"></div>
       </div>
       <div class="signature-box">
         <label for="notes"><strong>Notes / Defects / Follow-up Required</strong></label>
@@ -545,110 +267,69 @@
     </section>
 
     <div class="actions">
-      <button class="print" type="button" onclick="printChecklist()">Print Checklist</button>
-      <button class="pdf" type="button" onclick="exportPDF()">Export to PDF</button>
-      <button class="reset" type="button" onclick="resetChecklist()">Reset Checklist</button>
+      <button class="print" id="printBtnBottom" type="button">Print Checklist</button>
+      <button class="pdf" id="pdfBtnBottom" type="button">Save as PDF</button>
+      <button class="reset" id="resetBtnBottom" type="button">Reset Checklist</button>
     </div>
 
-    <footer>
-      KBX Mechanical - Line Marking Paint Truck SOP<br>
-      Use with current OEM, site, council and safety requirements.
-    </footer>
+    <footer>KBX Mechanical - Line Marking Paint Truck SOP<br>Use with current OEM, site, council and safety requirements.</footer>
   </main>
 
   <script>
-    const storagePrefix = 'lineMarkingSopV3_';
-    const boxes = Array.from(document.querySelectorAll('.task'));
-    const savedFields = Array.from(document.querySelectorAll('.saved-field'));
+    (function(){
+      const storagePrefix = 'lineMarkingSopV4_';
+      const boxes = Array.from(document.querySelectorAll('.task'));
+      const savedFields = Array.from(document.querySelectorAll('.saved-field'));
 
-    boxes.forEach((box) => {
-      const saved = localStorage.getItem(storagePrefix + box.id);
-      if(saved === 'true'){
-        box.checked = true;
+      function updateProgress(){
+        const total = boxes.length;
+        const checked = boxes.filter((box) => box.checked).length;
+        const percent = total === 0 ? 0 : Math.round((checked / total) * 100);
+        const bar = document.getElementById('progressBar');
+        const banner = document.getElementById('completionBanner');
+        document.getElementById('progressText').innerText = percent + '% Complete';
+        document.getElementById('counterText').innerText = checked + ' of ' + total + ' checked';
+        bar.style.width = percent + '%';
+        if(percent < 50){ bar.style.backgroundColor = '#d32f2f'; banner.innerText = ''; }
+        else if(percent < 100){ bar.style.backgroundColor = '#f9a825'; banner.innerText = ''; }
+        else{ bar.style.backgroundColor = '#2e7d32'; banner.innerText = 'Checklist Complete'; }
       }
-      box.addEventListener('change', () => {
-        localStorage.setItem(storagePrefix + box.id, String(box.checked));
+
+      function openAllSections(){ document.querySelectorAll('details').forEach((section) => { section.open = true; }); }
+      function collapseAllSections(){ document.querySelectorAll('details').forEach((section) => { section.open = false; }); }
+      function printChecklist(){ openAllSections(); window.print(); }
+      function saveAsPDF(){ openAllSections(); window.print(); }
+      function resetChecklist(){
+        const ok = confirm('Reset all checklist items and saved fields?');
+        if(!ok) return;
+        boxes.forEach((box) => { box.checked = false; localStorage.removeItem(storagePrefix + box.id); });
+        savedFields.forEach((field) => { field.value = field.id === 'vehicle' ? '92502' : ''; localStorage.removeItem(storagePrefix + field.id); });
         updateProgress();
-      });
-    });
-
-    savedFields.forEach((field) => {
-      const saved = localStorage.getItem(storagePrefix + field.id);
-      if(saved !== null){
-        field.value = saved;
       }
-      field.addEventListener('input', () => {
-        localStorage.setItem(storagePrefix + field.id, field.value);
-      });
-    });
 
-    function updateProgress(){
-      const total = boxes.length;
-      const checked = boxes.filter((box) => box.checked).length;
-      const percent = total === 0 ? 0 : Math.round((checked / total) * 100);
-      const bar = document.getElementById('progressBar');
-      const banner = document.getElementById('completionBanner');
-
-      document.getElementById('progressText').innerText = percent + '% Complete';
-      document.getElementById('counterText').innerText = checked + ' of ' + total + ' checked';
-      bar.style.width = percent + '%';
-
-      if(percent < 50){
-        bar.style.backgroundColor = '#d32f2f';
-        banner.innerText = '';
-      }else if(percent < 100){
-        bar.style.backgroundColor = '#f9a825';
-        banner.innerText = '';
-      }else{
-        bar.style.backgroundColor = '#2e7d32';
-        banner.innerText = 'Checklist Complete';
-      }
-    }
-
-    function resetChecklist(){
-      const ok = confirm('Reset all checklist items and saved fields?');
-      if(!ok){
-        return;
-      }
       boxes.forEach((box) => {
-        box.checked = false;
-        localStorage.removeItem(storagePrefix + box.id);
+        const saved = localStorage.getItem(storagePrefix + box.id);
+        if(saved === 'true') box.checked = true;
+        box.addEventListener('change', () => { localStorage.setItem(storagePrefix + box.id, String(box.checked)); updateProgress(); });
       });
+
       savedFields.forEach((field) => {
-        field.value = field.id === 'vehicle' ? '92502' : '';
-        localStorage.removeItem(storagePrefix + field.id);
+        const saved = localStorage.getItem(storagePrefix + field.id);
+        if(saved !== null) field.value = saved;
+        field.addEventListener('input', () => { localStorage.setItem(storagePrefix + field.id, field.value); });
       });
+
+      document.getElementById('printBtn').addEventListener('click', printChecklist);
+      document.getElementById('pdfBtn').addEventListener('click', saveAsPDF);
+      document.getElementById('resetBtn').addEventListener('click', resetChecklist);
+      document.getElementById('expandBtn').addEventListener('click', openAllSections);
+      document.getElementById('collapseBtn').addEventListener('click', collapseAllSections);
+      document.getElementById('printBtnBottom').addEventListener('click', printChecklist);
+      document.getElementById('pdfBtnBottom').addEventListener('click', saveAsPDF);
+      document.getElementById('resetBtnBottom').addEventListener('click', resetChecklist);
+
       updateProgress();
-    }
-
-    function openAllSections(){
-      document.querySelectorAll('details').forEach((section) => {
-        section.open = true;
-      });
-    }
-
-    function collapseAllSections(){
-      document.querySelectorAll('details').forEach((section) => {
-        section.open = false;
-      });
-    }
-
-    function printChecklist(){
-      openAllSections();
-      window.print();
-    }
-
-    function exportPDF(){
-      openAllSections();
-      setTimeout(() => {
-        alert(
-          "Select 'Save as PDF' in the print dialog."
-          );
-      window.print();
-    }, 200);
-    }
-
-    updateProgress();
+    })();
   </script>
 </body>
 </html>
