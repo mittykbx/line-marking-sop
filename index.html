@@ -257,7 +257,7 @@
         <div class="field"><label for="signOperator">Operator Name</label><input id="signOperator" class="saved-field" type="text"></div>
         <div class="field"><label for="supervisor">Supervisor / Reviewer</label><input id="supervisor" class="saved-field" type="text"></div>
         <div class="field"><label for="completionDate">Date Completed</label><input id="completionDate" class="saved-field" type="date"></div>
-        <div class="field"><label for="signature">Signed Electronically  By</label><input id="signature" class="saved-field signature-field" type="text" placeholder="Type full name"></div>
+        <div class="field"><label for="signature">Signed Electronically By</label><input id="signature" class="saved-field" type="text" placeholder="Type full name"></div>
       </div>
       <div class="signature-box">
         <label for="notes"><strong>Notes / Defects / Follow-up Required</strong></label>
@@ -297,7 +297,7 @@
       function openAllSections(){ document.querySelectorAll('details').forEach((section) => { section.open = true; }); }
       function collapseAllSections(){ document.querySelectorAll('details').forEach((section) => { section.open = false; }); }
       function printChecklist(){ openAllSections(); window.print(); }
-      function saveAsPDF(){ openAllSections();setTimeout(() =>{alert("For best PDF results:\n\n""Paper Size = A4\n""Marins=Default\n\n""Then click Save."); window.print(); }
+      function saveAsPDF(){ openAllSections();setTimeout(() =>{alert("For best PDF results:\n\n""Paper Size = A4\n""Marins=Default\n\n""Then click Save."); window.print();},100); }
       function resetChecklist(){
         const ok = confirm('Reset all checklist items and saved fields?');
         if(!ok) return;
