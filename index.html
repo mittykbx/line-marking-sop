@@ -297,7 +297,7 @@
       function openAllSections(){ document.querySelectorAll('details').forEach((section) => { section.open = true; }); }
       function collapseAllSections(){ document.querySelectorAll('details').forEach((section) => { section.open = false; }); }
       function printChecklist(){ openAllSections(); window.print(); }
-      function saveAsPDF(){openAllSections();setTimeout(() => {alert("For best PDF results:\n\n" + "Paper Size = A4\n" + "Margins = Default\n\n" + "Then click Save.");window.print();}, 100);}
+      function saveAsPDF(){openAllSections();setTimeout(() => {alert("For best PDF results:\n\n" + "Paper Size = A4\n" + "Margins = Default\n" + "Scale = Default\n\n" + "Then click Save.");window.print();}, 100);}
       function resetChecklist(){
         const ok = confirm('Reset all checklist items and saved fields?');
         if(!ok) return;
